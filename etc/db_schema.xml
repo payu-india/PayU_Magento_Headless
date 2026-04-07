@@ -1,0 +1,19 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="default" engine="innodb" comment="sales order">
+        <column xsi:type="varchar" name="txnid" nullable="false" length="255" comment="Txn Id"/>
+    </table>
+    <table name="payu_webhook" resource="default" engine="innodb" comment="Payu Webhook">
+        <column xsi:type="int" name="id" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="varchar" name="txn_id" nullable="false" length="255" comment="Txn Id" />
+        <column xsi:type="varchar" name="mihpayid" nullable="false" length="255" comment="Payu Mihpayid" />
+        <column xsi:type="text" name="response" nullable="false" comment="Webhook Response" />
+        <column xsi:type="varchar" name="payment_response" nullable="false" length="255" comment="Payment Response" />
+        <column xsi:type="varchar" name="type" nullable="false" length="255" comment="Webhook Type" />
+        <column xsi:type="int" name="status" nullable="false" default="0" comment="Status" />
+        <column xsi:type="datetime" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created at" />
+       <constraint xsi:type="primary" referenceId="PRIMARY">
+           <column name="id" />
+       </constraint>
+    </table>
+</schema>
