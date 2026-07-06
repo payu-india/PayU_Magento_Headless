@@ -1,0 +1,11 @@
+
+type Query {
+    payuCheckoutHtml(
+		quote_id: String!
+		enforce_paymethod: String!
+	): PayuCheckoutResponse @resolver(class: "PayUIndia\\Payu\\Model\\Resolver\\PayuCheckoutResolver")
+}
+type PayuCheckoutResponse {
+    html: String
+}
+
