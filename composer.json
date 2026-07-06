@@ -1,5 +1,5 @@
 {
-    "name": "payuindia/payu_gql",
+    "name": "payuindia/module-payu",
     "description": "PayU Payment Module for Magento 2.4.x",
     "require": {
         "php": "~8.4.0"
